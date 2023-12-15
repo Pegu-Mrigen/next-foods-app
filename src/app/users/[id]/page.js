@@ -13,14 +13,28 @@ const EditUserPage = () => {
 
   const { id } = useParams();
 
+  // useEffect(() => {
+  //   fetch("/api/users").then((res) => {
+  //     res.json().then((users) => {
+  //       const user = users.find((u) => u._id === id);
+  //       setUser(user);
+  //     });
+  //   });
+  // }, [id]);
   useEffect(() => {
-    fetch("/api/users").then((res) => {
-      res.json().then((users) => {
-        const user = users.find((u) => u._id === id);
-        setUser(user);
-      });
-    });
-  }, [id]);
+    // fetch("/api/users?_id="+id).then((res) => {
+    //   res.json().then((users) => {
+    //     const user = users.find((u) => u._id === id);
+    //     setUser(user);
+    //   });
+    // });
+    fetch("/api/profile?_id="+id).then(res=>{
+      res.json().then(user=>{
+          setUser(user)
+      })
+  })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSaveButtonClick = async (e, data) => {
     e.preventDefault();

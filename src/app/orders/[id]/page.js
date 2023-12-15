@@ -70,7 +70,8 @@ const OrderPage = () => {
           </div>
           <div>
             <div className="bg-gray-100 p-4 rounded-lg">
-              <AddressInputs disabled={true} addressProps={{ ...order }} />
+              {/* <AddressInputs disabled={true} addressProps={{ ...order }} /> */}
+              <AddressInputs disabled={true} addressProps={order } />
             </div>
           </div>
         </div>

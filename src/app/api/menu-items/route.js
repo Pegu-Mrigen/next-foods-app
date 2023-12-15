@@ -32,14 +32,15 @@ export async function GET() {
 }
 export async function DELETE(req) {
   mongoose.connect(process.env.MONGO_URL);
-  console.log(req.url);
+  //console.log(req.url);
 
   const url = new URL(req.url);
-  console.log(url.searchParams);
+  //console.log(url.searchParams);
 
   const _id = url.searchParams.get("_id");
   if (await isAdmin()) {
     await MenuItem.deleteOne({ _id });
+    return Response.json(true);
   } else {
     return Response.json(true);
   }

@@ -170,7 +170,7 @@ const CartPage = () => {
               //     </button>
               //   </div>
               // </div>
-              <CartProduct key={product.name} product={product} onRemove={removeCartProduct} />
+              <CartProduct key={index} product={product} onRemove={removeCartProduct} />
             ))}
           <div className="py-2 pr-16 flex justify-end items-center">
             <div className="text-gray-600">

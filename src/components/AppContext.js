@@ -52,6 +52,8 @@ export default function AppProvider({ children }) {
       return newProducts;
     });
   }
+
+
   function removeCartProduct(indexToRemove) {
     setCartProducts(prevCartProducts=>{
         const newCartProducts= prevCartProducts.filter((v, index)=>index!==indexToRemove)
@@ -60,6 +62,8 @@ export default function AppProvider({ children }) {
       });
       toast.success("Product removed")
   }
+
+  
   function clearCart() {
     setCartProducts([]);
     saveCartProductsToLocalStorage([])

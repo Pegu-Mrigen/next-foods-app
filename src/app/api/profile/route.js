@@ -45,8 +45,11 @@ export async function PUT(req) {
   return Response.json(true);
 }
 
-export async function GET() {
+export async function GET(req) {
   mongoose.connect(process.env.MONGO_URL);
+  const url = new URL(req.url);
+
+   const _id = url.searchParams.get("_id");
 
   const session = await getServerSession(authOptions);
 

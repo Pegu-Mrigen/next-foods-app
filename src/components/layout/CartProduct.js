@@ -39,7 +39,7 @@ const CartProduct = ({product,onRemove}) => {
         <button
           type="button"
           onClick={onRemove}
-         // onClick={(index) => removeCartProduct(index)}
+        
           className="p-2"
           >
           <Trash />
