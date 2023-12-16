@@ -123,7 +123,7 @@ export default function Header() {
 
           <Link href={"/cart"} className="relative">
             <ShoppingCart />
-            {cartProducts?.length > 0 && (
+            {cartProducts?.length > 0 && !session && (
               <span className="absolute -top-2 -right-4 bg-primary text-white text-xs px-1.5 p-1 rounded-full leading-3">
                 {" "}
                 {cartProducts.length}

@@ -4,7 +4,7 @@ import { CartContext } from "../AppContext";
 import toast from "react-hot-toast";
 import MenuItemTile from "./MenuItemTile";
 import Image from "next/image";
-// import  FlyingButton  from "react-flying-item";
+import  FlyingButton  from "react-flying-item";
 
 const MenuItem = (menuItem) => {
   const { image, name, description, basePrice, sizes, extraIngredientPrice } =
@@ -103,7 +103,7 @@ const MenuItem = (menuItem) => {
               {sizes?.length > 0 && (
                 <div className=" py-2">
                   <h3 className="text-center text-gray-700">
-                    Pick your item sizeee
+                    Pick your item size
                   </h3>
                   {sizes.map((size) => (
                     <label
@@ -152,8 +152,11 @@ const MenuItem = (menuItem) => {
               {/* <FlyingButton src={image} targetTop	="5%" targetLeft	="95%" className=" primary sticky bottom-2"  >
                 <div  onClick={handleAddToCartButtonClick}>Add to cart Rs/- {basePrice}</div>
                 </FlyingButton> */}
-              
+              <FlyingButton src={image} targetTop	="5%" targetLeft	="95%" className=" primary sticky bottom-2"  >
                 <div  onClick={handleAddToCartButtonClick}>Add to cart Rs/- {basePrice}</div>
+                </FlyingButton>
+              
+                
                
 
               <button onClick={() => setShowPopup(false)} className="mt-2">

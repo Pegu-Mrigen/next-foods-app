@@ -36,7 +36,7 @@ const OrdersPage = () => {
         {loadingOrders && (
             <div>Loading orders...</div>
         )}
-        {orders?.length > 0 &&
+        {orders?.length > 0 ?(
           orders.map((order) => (
             <div
               key={order._id}
@@ -72,7 +72,12 @@ const OrdersPage = () => {
                 </Link>
               </div>
             </div>
-          ))}
+          ))):
+          (<div>No order available from you!</div>)
+          
+          
+          
+          }
       </div>
     </section>
   );
