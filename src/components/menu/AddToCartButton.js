@@ -1,4 +1,4 @@
-import FlyingButton from 'react-flying-item'
+//import FlyingButton from 'react-flying-item'
 
 const AddToCartButton = ({hasSizesOrExtras, onClick, basePrice, image, }) => {
 
