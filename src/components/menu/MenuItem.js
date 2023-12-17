@@ -4,7 +4,7 @@ import { CartContext } from "../AppContext";
 import toast from "react-hot-toast";
 import MenuItemTile from "./MenuItemTile";
 import Image from "next/image";
-import  FlyingButton  from "react-flying-item";
+import FlyingButton from "react-flying-item";
 
 const MenuItem = (menuItem) => {
   const { image, name, description, basePrice, sizes, extraIngredientPrice } =
@@ -140,7 +140,9 @@ const MenuItem = (menuItem) => {
                         onChange={(e) => handleExtraClick(e, extra)}
                         name="extra"
                         value=""
-                        checked={selectedExtra.map(e=>e._id).includes(extra._id)}
+                        checked={selectedExtra
+                          .map((e) => e._id)
+                          .includes(extra._id)}
                       />
                       {extra.name} +Rs/- {extra.price}
                     </label>
@@ -152,14 +154,27 @@ const MenuItem = (menuItem) => {
               {/* <FlyingButton src={image} targetTop	="5%" targetLeft	="95%" className=" primary sticky bottom-2"  >
                 <div  onClick={handleAddToCartButtonClick}>Add to cart Rs/- {basePrice}</div>
                 </FlyingButton> */}
-              <FlyingButton src={image} targetTop	="5%" targetLeft	="95%" className=" primary sticky bottom-2"  >
-                <div  onClick={handleAddToCartButtonClick}>Add to cart Rs/- {basePrice}</div>
-                </FlyingButton>
-              
-                
-               
 
-              <button onClick={() => setShowPopup(false)} className="mt-2">
+              <div className="bg-primary rounded-lg">
+                <FlyingButton
+                  src={image}
+                  targetTop="5%"
+                  targetLeft="95%"
+                  className="text-white sticky bottom-2 "
+                >
+                  <div
+                    onClick={handleAddToCartButtonClick}
+                    className="text-white  "
+                  >
+                    Add to cart Rs/- {basePrice}
+                  </div>
+                </FlyingButton>
+              </div>
+
+              <button
+                onClick={() => setShowPopup(false)}
+                className="mt-2 bg-primary text-white"
+              >
                 Cancel
               </button>
             </div>

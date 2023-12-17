@@ -3,7 +3,7 @@ import { CartContext, cartProductPrice } from "../AppContext";
 import Trash from "../icons/Trash";
 import Image from "next/image";
 
-const CartProduct = ({product,onRemove}) => {
+const CartProduct = ({product, onRemove}) => {
   const { cartProducts, removeCartProduct } = useContext(CartContext);
   return (
     <div

@@ -45,18 +45,72 @@ export async function PUT(req) {
   return Response.json(true);
 }
 
+// export async function GET(req) {
+//   mongoose.connect(process.env.MONGO_URL);
+//   const url = new URL(req.url);
+
+//    const _id = url.searchParams.get("_id");
+
+//   const session = await getServerSession(authOptions);
+
+//   const email = session?.user?.email;
+//   if (!session) {
+//     return Response.json({});
+//   }
+
+//   return Response.json(await User.findOne({email}));
+// }
 export async function GET(req) {
   mongoose.connect(process.env.MONGO_URL);
   const url = new URL(req.url);
-
+  console.log(url)
+  
    const _id = url.searchParams.get("_id");
+  // const session = await getServerSession(authOptions);
+  // const email = session?.user?.email;
 
-  const session = await getServerSession(authOptions);
-
-  const email = session?.user?.email;
-  if (!session) {
-    return Response.json({});
+  
+  let filterUser = {};
+  if (_id) {
+    filterUser = {_id};
+  } else {
+    const session = await getServerSession(authOptions);
+    const email = session?.user?.email;
+    if (!email) {
+      return Response.json({});
+    }
+    filterUser = {email};
   }
 
-  return Response.json(await User.findOne({email}));
+
+  console.log(_id)
+  
+  console.log(filterUser)
+
+  const user = await User.findOne(filterUser);
+  //const userInfo = await User.findOne({email:user.email});
+  
+
+  // return Response.json({...userInfo, ...user});
+  return Response.json(user);
 }
+
+// // Working Properly
+// export async function GET(req) {
+//   mongoose.connect(process.env.MONGO_URL);
+//   const url = new URL(req.url);
+//   console.log(url)
+
+//    const _id = url.searchParams.get("_id");
+//    console.log(_id)
+
+//   const session = await getServerSession(authOptions);
+
+//   const email = session?.user?.email;
+//   console.log(email)
+//   if (!session) {
+//     return Response.json({});
+//   }
+
+//   return Response.json(await User.findOne({email}));
+// }

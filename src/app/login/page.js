@@ -1,16 +1,13 @@
 "use client";
 import {signIn} from "next-auth/react";
+import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
-
-
   const [loginInProgress, setLoginInProgress] = useState(false)
 
 
@@ -29,6 +26,7 @@ const LoginPage = () => {
 
     //   }
 
+    // await signIn("credentials", {email, password, callbackUrl:"/"})
     await signIn("credentials", {email, password, callbackUrl:"/"})
 
       setLoginInProgress(false)
@@ -40,6 +38,7 @@ const LoginPage = () => {
       <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
         <input
           type="email"
+          name="email"
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -47,6 +46,7 @@ const LoginPage = () => {
         />
         <input
           type="password"
+          name="password"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

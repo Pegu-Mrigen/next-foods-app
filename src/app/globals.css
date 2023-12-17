@@ -53,3 +53,4 @@ div.tabs > *.active{
 .flyingButtonParent button{
   @apply border-primary bg-primary text-white rounded-full;
 }
+

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import RightSide from "../icons/RightSide";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -15,11 +16,13 @@ const Hero = () => {
           among food lovers worldwide.
         </p>
         <div className="flex gap-4 text-sm">
-          <button className="bg-primary uppercase  flex justify-center items-center gap-2 text-white px-4 py-2 rounded-full ">Order now
+          
+          <button className="bg-primary uppercase  flex justify-center items-center gap-2 text-white px-4 py-2 rounded-full "><Link href={"/menu"}>Order now</Link>
           
           <RightSide />
           </button>
-          <button className="flex items-center border-0 gap-2 py-2 text-gray-600  font-semibold">Learn more
+          
+          <button className="flex items-center border-0 gap-2 py-2 text-gray-600  font-semibold"><Link href={"/#about"}>Learn more</Link>
           
           <RightSide />
           </button>

@@ -83,6 +83,7 @@ const ProfilePage = () => {
   return (
     <section className="mt-8">
       <UserTabs isAdmin={isAdmin} />
+      {/* <UserTabs isAdmin={true} /> */}
 
       <div className="max-w-2xl mx-auto mt-8">
         <UserForm user={userInfo} onSave={handleProfileUpdate} />

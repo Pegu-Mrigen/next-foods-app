@@ -1,19 +1,22 @@
 "use client";
+import { CartContext } from "@/components/AppContext";
 import { useProfile } from "@/components/UseProfile";
 import SectionHeaders from "@/components/layout/SectionHeaders";
 import UserTabs from "@/components/layout/UserTabs";
 import datTimeModifier from "@/libs/datTime";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [loadingOrders, setLoadingOrders] = useState(true);
   const { loading, userData: profileData } = useProfile();
 
+
+  const { clearCart } = useContext(CartContext);
+
   useEffect(() => {
-    fetchOrders()
-    
+    fetchOrders()   
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
