@@ -4,7 +4,7 @@ import { CartContext } from "../AppContext";
 import toast from "react-hot-toast";
 import MenuItemTile from "./MenuItemTile";
 import Image from "next/image";
-//import FlyingButton from "react-flying-item";
+import FlyingButton from "react-flying-item";
 
 const MenuItem = (menuItem) => {
   const { image, name, description, basePrice, sizes, extraIngredientPrice } =
@@ -156,19 +156,19 @@ const MenuItem = (menuItem) => {
                 </FlyingButton> */}
 
               <div className="bg-primary rounded-lg">
-                {/* <FlyingButton
+                <FlyingButton
                   src={image}
                   targetTop="5%"
                   targetLeft="95%"
                   className="text-white sticky bottom-2 "
-                > */}
+                >
                   <div
                     onClick={handleAddToCartButtonClick}
                     className="text-white  "
                   >
                     Add to cart Rs/- {basePrice}
                   </div>
-                {/* </FlyingButton> */}
+                </FlyingButton>
               </div>
 
               <button
