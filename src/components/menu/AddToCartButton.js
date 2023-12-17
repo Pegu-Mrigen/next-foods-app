@@ -5,9 +5,9 @@ const AddToCartButton = ({hasSizesOrExtras, onClick, basePrice, image, }) => {
     if(!hasSizesOrExtras){
         return (
             <div className='flyingButtonParent mt-4'>
-                <FlyingButton src={image} targetTop	="5%" targetLeft	="95%"  >
+                {/* <FlyingButton src={image} targetTop	="5%" targetLeft	="95%"  > */}
                 <div  onClick={onClick}>Add to cart Rs/- {basePrice}</div>
-                </FlyingButton>
+                {/* </FlyingButton> */}
             </div>
 
 
