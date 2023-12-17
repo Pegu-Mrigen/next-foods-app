@@ -28,12 +28,15 @@
     "stripe": "^14.9.0"
   },
   "devDependencies": {
-    
+    "@babel/plugin-transform-typescript": "7.19.3",
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "web-vitals": "^3.5.0"
+  },
+  "resolutions": {
+    "@babel/plugin-transform-typescript": "7.19.3"
   }
 }
