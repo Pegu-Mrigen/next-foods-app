@@ -170,7 +170,7 @@ const CartPage = () => {
               //     </button>
               //   </div>
               // </div>
-              <CartProduct key={index} product={product} onRemove={removeCartProduct} />
+              <CartProduct key={index} product={product} onRemove={removeCartProduct} index={index} />
             ))}
           <div className="py-2 pr-16 flex justify-end items-center">
             <div className="text-gray-600">
@@ -194,7 +194,7 @@ const CartPage = () => {
               addressProps={address}
               setAddressProps={handleAddressChange}
             />
-            <button type="submit">Pay Rs/- {subtotal + 20}</button>
+            <button type="submit">Pay Rs/- {subtotal + 5}</button>
           </form>
         </div>
       </div>

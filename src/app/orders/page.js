@@ -75,12 +75,14 @@ const OrdersPage = () => {
                 </Link>
               </div>
             </div>
-          ))):
-          (<div>No order available from you!</div>)
+          ))):""
+
+
+        }
+          {!orders && <div>No order available from you!</div>}
           
           
           
-          }
       </div>
     </section>
   );

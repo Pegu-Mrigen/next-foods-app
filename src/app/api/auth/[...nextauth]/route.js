@@ -45,6 +45,7 @@ export const authOptions = {
         console.log({ password });
         console.log({ passwordOk });
 
+        
         if (passwordOk) {
           return user;
         }
@@ -62,6 +63,8 @@ export const authOptions = {
         // }
         // Return null if user data could not be retrieved
         return null;
+       
+        
       },
     }),
   ],

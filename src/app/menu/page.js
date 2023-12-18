@@ -8,14 +8,20 @@ const MenuPage = () => {
 
     const [categories, setCategories]=useState([])
     const [menuItems, setMenuItems] = useState([])
+    const [menuItemsFetched, setMenuItemsFetched] = useState(false);
 
     useEffect(()=>{
         fetch("/api/categories").then(res=>{res.json().then(categories=>setCategories(categories))})
         fetch("/api/menu-items").then(res=>{res.json().then(menuItems=>setMenuItems(menuItems))})
+        setMenuItemsFetched(true)
 
     }, [])
 
     //console.log(categories, menuItems)
+
+    if ( !menuItemsFetched) {
+        return "Menu items are coming...";
+      }
   return (
     <section className='mt-8'>
         {categories?.length>0 && categories.map(c=>(

@@ -48,13 +48,13 @@ const ProfilePage = () => {
   }, [session, status]);
 
   if (!session || status === "unauthenticated") {
-    return <h1>Please login!</h1>;
+    return <h1>You are not login!</h1>;
   }
   if (status === "loading" || !profileFetched) {
     return "loading profile...";
   }
   if (status === "unauthenticated") {
-    return redirect("/login");
+    return redirect("/");
   }
 
   async function  handleProfileUpdate (e, data){
@@ -81,13 +81,14 @@ const ProfilePage = () => {
   };
 
   return (
-    <section className="mt-8">
+    <section className="mt-8 min-h-screen">
       <UserTabs isAdmin={isAdmin} />
       {/* <UserTabs isAdmin={true} /> */}
 
       <div className="max-w-2xl mx-auto mt-8">
         <UserForm user={userInfo} onSave={handleProfileUpdate} />
       </div>
+     
     </section>
   );
 };
