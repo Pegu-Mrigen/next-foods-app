@@ -113,7 +113,7 @@ const CartPage = () => {
     return (
       <section className="mt-8 text-center">
         <SectionHeaders mainHeader= "Cart" />
-        <p className="mt-4">
+        <p className="mt-4 min-h-screen ">
           Your shopping cart is empty 😞  
         </p>
       </section>
@@ -121,11 +121,11 @@ const CartPage = () => {
   }
 
   return (
-    <section className="mt-8">
+    <section className="mt-8 ">
       <div className="text-center">
         <SectionHeaders mainHeader="Cart" />
       </div>
-      <div className="grid gap-8 grid-cols-2 mt-8">
+      <div className="grid gap-8 md:grid-cols-2 mt-8 ">
         <div>
           {cartProducts?.length === 0 && (
             <div>No products in your shopping cart</div>

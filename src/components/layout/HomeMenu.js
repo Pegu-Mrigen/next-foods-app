@@ -14,13 +14,13 @@ const HomeMenu = () => {
       res.json().then(menuItems=>{
         //const bestSellers=menuItems.slice(-3)
        // console.log(bestSellers)
-       setBestSellers(menuItems.slice(-3))
+       setBestSellers(menuItems.slice(-6))
       })
     })
 
   }, [])
   return (
-    <section>
+    <section className="mt-6">
       <div className="relative left-0 right-0   ">
         <div className=" hidden xl:inline-block h-48 w-48 absolute -left-64 rotate-180  -z-10 overflow-x-hidden  ">
           <Image src={"/leafs.png"} alt="" layout="fill" objectFit="contain " />

@@ -40,8 +40,9 @@ export default function RootLayout({ children }) {
           <Toaster />
           <Header />
           {children}
-          <footer className="border-t p-8 text-center text-gray-500 mt-16">
-            &copy; 2023 All rights reserved
+          <footer className="border-t p-8 text-center text-gray-500 mt-10 flex flex-col justify-center items-center">
+            <Link href={"/"}  className   ="bg-primary my-2 p-1 w-fit rounded-md text-white">Top 👆 </Link>
+            <div>&copy; 2023 All rights reserved</div>
           </footer>
           
           </AppProvider>

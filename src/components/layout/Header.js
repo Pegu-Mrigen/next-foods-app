@@ -63,14 +63,14 @@ export default function Header() {
       clearCart();
     }
     
-      // clearCart()    
+      // clearCart()   
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ status]);
   return (
     <header>
       <div className="flex items-center md:hidden justify-between">
         <Link className="text-primary font-semibold text-2xl" href="/">
-          GOHPUR FOODS 
+        GHP FOODS 
         </Link>
         <div className="flex gap-4 items-center">
           <Link href={"/cart"} className="relative">
@@ -92,7 +92,7 @@ export default function Header() {
       </div>
       {mobileNavOpen && (
         <div
-          className="md:hidden p-4 bg-gray-200 rounded-lg mt-2 flex flex-col gap-10 text-center h-[60vh] text-xl  "
+          className="md:hidden p-4 bg-gray-200 rounded-lg mt-2 flex flex-col gap-10 text-center h-[60vh] text-xl font-bold text-primary"
           onClick={() => setMobileNavOpen(false)}
         >
           <Link href={"/"}>Home</Link>
@@ -106,7 +106,7 @@ export default function Header() {
       <div className="hidden md:flex items-center justify-between">
         <nav className=" flex items-center gap-8 text-gray-500 font-semibold">
           <Link className="text-primary font-semibold text-2xl" href="/">
-            GOHPUR FOODS 
+            GHP FOODS 
           </Link>
           <Link href={"/"}>Home</Link>
           <Link href={"/menu"}>Menu</Link>
