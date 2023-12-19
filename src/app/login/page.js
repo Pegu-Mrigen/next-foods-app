@@ -1,14 +1,22 @@
 "use client";
-import {signIn} from "next-auth/react";
+import {signIn, useSession} from "next-auth/react";
 import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from 'react-hot-toast';
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginInProgress, setLoginInProgress] = useState(false)
+
+
+  const router= useRouter()
+
+
+  const session = useSession();
 
 
   async function handleFormSubmit(e) {
@@ -26,10 +34,26 @@ const LoginPage = () => {
 
     //   }
 
-    // await signIn("credentials", {email, password, callbackUrl:"/"})
-    await signIn("credentials", {email, password, callbackUrl:"/"})
+    //  await signIn("credentials", {email, password, callbackUrl:"/"})
+//     const { error }  = await signIn("credentials", {email, password, callbackUrl:"/"})
+//     if (error) {
+//       router.push("/");
+// } else {
+//       router.push("/");
+// }
 
-      setLoginInProgress(false)
+
+await signIn("credentials", { email, password, redirect: false })
+    .then(({ ok, error }) => {
+        if (ok) {
+            router.push("/");
+        } else {
+            console.log(error)
+            toast("Credentials do not match!", { type: "error" });
+        }
+        setLoginInProgress(false)
+    })
+
 } 
   return (
     <section className="mt-8">
