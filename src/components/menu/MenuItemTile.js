@@ -1,8 +1,13 @@
 import { Span } from 'next/dist/trace'
 import React from 'react'
 import AddToCartButton from './AddToCartButton'
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 const MenuItemTile = ({onAddToCart, ...item}) => {
+
+  const session = useSession();
+  console.log(session)
 
   //console.log(item)
 
@@ -34,9 +39,15 @@ const MenuItemTile = ({onAddToCart, ...item}) => {
           )}
       </button> */}
 
-      <AddToCartButton hasSizesOrExtras={hasSizesOrExtras}
+     {session?.status==="authenticated" && (<AddToCartButton hasSizesOrExtras={hasSizesOrExtras}
       onClick={onAddToCart}  basePrice={basePrice} image={image}
-       />
+       />)}
+       
+       { session?.status==="unauthenticated" && (<Link href={"/AddToCartLogin"}>
+      <AddToCartButton hasSizesOrExtras={hasSizesOrExtras}
+       basePrice={basePrice} image={image}
+       /></Link>)}
+     
     </div>
   )
 }

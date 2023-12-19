@@ -8,12 +8,14 @@ import AddressInputs from "@/components/layout/AddressInputs";
 import { useProfile } from "@/components/UseProfile";
 import toast from "react-hot-toast";
 import CartProduct from "@/components/layout/CartProduct";
+import { useSession } from "next-auth/react";
 
 const CartPage = () => {
   const { cartProducts, removeCartProduct } = useContext(CartContext);
   const [address, setAddress] = useState({});
 
   const { userData: profileData } = useProfile();
+  
 
 
   useEffect(()=>{
@@ -78,9 +80,15 @@ const CartPage = () => {
   // }
 
   //console.log(cartProducts)
+  const session = useSession();
+  console.log(session.status)
 
   async function proceedToCheckout(e) {
     e.preventDefault();
+    if(session.status="unauthenticated") return null
+   
+
+
 
     const promise = new Promise((resolve, reject) => {
       fetch("/api/checkout", {
