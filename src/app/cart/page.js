@@ -85,7 +85,7 @@ const CartPage = () => {
 
   async function proceedToCheckout(e) {
     e.preventDefault();
-    if(session.status="unauthenticated") return null
+    // if(session.status="unauthenticated") return null
    
 
 
