@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
            
            <div className="flex flex-col justify-center items-center">
             <Link href={"/"}  className="bg-primary  my-2 p-1 w-fit rounded-md text-white">Top 👆 </Link> 
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center flex-col ">
               
               <Image width={40} height={40} src="/Icon.png" alt="logo"></Image>
               <p className="font-bold text-primary">&copy; 2023 All rights reserved </p>  
