@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import ShoppingCart from "../icons/ShoppingCart";
 import BarsThree from "../icons/BarsThree";
-import { CartContext } from '@/components/AppContext';
+import { CartContext } from "@/components/AppContext";
 
 function AuthLinks({ status, userName }) {
   if (status === "authenticated")
@@ -15,7 +15,7 @@ function AuthLinks({ status, userName }) {
         </Link>
 
         <button
-          onClick={() => signOut({callbackUrl:"/"})}
+          onClick={() => signOut({ callbackUrl: "/" })}
           className="bg-primary rounded-full text-white px-8 py-2"
         >
           Logout
@@ -23,7 +23,6 @@ function AuthLinks({ status, userName }) {
       </>
     );
   if (status === "unauthenticated")
-  
     return (
       <>
         <Link href="/login">Login</Link>
@@ -33,7 +32,6 @@ function AuthLinks({ status, userName }) {
         >
           Register
         </Link>
-        
       </>
     );
 }
@@ -42,10 +40,9 @@ export default function Header() {
   const session = useSession();
   const { clearCart } = useContext(CartContext);
 
-
   console.log(session);
   const status = session.status;
-  console.log(status)
+  console.log(status);
 
   const userData = session.data?.user;
   let userName = userData?.name || userData?.email;
@@ -62,20 +59,25 @@ export default function Header() {
     if (status === "unauthenticated") {
       clearCart();
     }
-    
-      // clearCart()   
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ status]);
+
+    // clearCart()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
   return (
     <header>
       <div className="flex items-center md:hidden justify-between">
-        <Link className="text-primary font-semibold text-2xl" href="/">
-        GHP FOODS 
+        <Link
+          className="text-primary font-semibold text-2xl flex flex-col items-center justify-center  leading-6"
+          href="/"
+          onClick={() => setMobileNavOpen(false)}
+        >
+          <span className="text-sm">AC👨‍🍳</span>
+          <span className="text-yellow-600 font-normal text-sm">FOODS</span>
         </Link>
         <div className="flex gap-4 items-center">
           <Link href={"/cart"} className="relative">
             <ShoppingCart />
-            {cartProducts?.length > 0 &&  (
+            {cartProducts?.length > 0 && (
               <span className="absolute -top-2 -right-4 bg-primary text-white text-xs px-1.5 p-1 rounded-full leading-3">
                 {" "}
                 {cartProducts.length}
@@ -104,9 +106,10 @@ export default function Header() {
       )}
 
       <div className="hidden md:flex items-center justify-between">
-        <nav className=" flex items-center gap-8 text-gray-500 font-semibold">
-          <Link className="text-primary font-semibold text-2xl" href="/">
-            GHP FOODS 
+        <nav className=" flex items-center gap-8 text-gray-500 font-semibold ">
+          <Link className="text-primary font-semibold text-2xl z-50 flex items-center justify-center leading-5 flex-col" href="/">
+          <span className="text-normal">AC👨‍🍳</span>
+          <span className="text-yellow-600 font-normal text-normal">FOODS</span>
           </Link>
           <Link href={"/"}>Home</Link>
           <Link href={"/menu"}>Menu</Link>
