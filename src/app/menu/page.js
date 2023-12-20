@@ -19,12 +19,17 @@ const MenuPage = () => {
 
     //console.log(categories, menuItems)
 
-    if ( !menuItemsFetched) {
-        return "Menu items are coming...";
+    if (! menuItemsFetched) {
+        return <div className='h-screen'>
+            <p> Menu items are coming...</p>
+        </div>
       }
   return (
     <section className='mt-8'>
-        {categories?.length>0 && categories.map(c=>(
+        {!menuItemsFetched &&  <div className='h-screen'>
+            <p> Menu items are coming...</p>
+        </div>}
+        {!!menuItemsFetched && categories?.length>0 && categories.map(c=>(
             <div key={c._id}>
                 <div className='text-center'>
                 <SectionHeaders mainHeader={c.name} />

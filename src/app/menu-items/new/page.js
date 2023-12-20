@@ -134,9 +134,7 @@ const router = useRouter()
 
   if (redirectToItems) {
     return redirect('/menu-items');
-  }
-
-  
+  } 
 
   return (
     <section className="flex flex-col mt-8 items-center justify-center">
@@ -146,9 +144,7 @@ const router = useRouter()
      <LeftSide />
      Show all menu item
      </Link>
-     </div>
-     
-      
+     </div> 
       <div className="flex">
       <div className="max-w-md mx-auto mt-8 grid" style={{ gridTemplateColumns: "1fr" }} >
         {data?.img ? (

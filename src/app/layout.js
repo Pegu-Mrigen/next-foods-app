@@ -5,6 +5,7 @@ import {AppProvider} from "@/components/AppContext";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
@@ -40,11 +41,24 @@ export default function RootLayout({ children }) {
           <Toaster />
           <Header />
           {children}
-          <footer className="border-t p-8 text-center text-gray-500 mt-10 flex flex-col justify-center items-center">
-            <Link href={"/"}  className   ="bg-primary my-2 p-1 w-fit rounded-md text-white">Top 👆 </Link>
-            <div>&copy; 2023 All rights reserved</div>
-          </footer>
           
+          {/* <footer  className="bg-[url('/appun.jpg')] text-center h-full m-10 p-20    "> */}
+          <footer  className=" m-10 ">
+
+           
+           <div className="flex flex-col justify-center items-center">
+            <Link href={"/"}  className="bg-primary  my-2 p-1 w-fit rounded-md text-white">Top 👆 </Link> 
+            <div className="flex items-center justify-center">
+              
+              <Image width={40} height={40} src="/Icon.png" alt="logo"></Image>
+              <p className="font-bold text-primary">&copy; 2023 All rights reserved </p>  
+            
+            </div>
+            </div>
+            
+           
+           
+          </footer>
           </AppProvider>
         </main>
       </body>
