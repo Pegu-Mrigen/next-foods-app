@@ -61,10 +61,10 @@ const OrderPage = () => {
               <span className="text-black font-bold inline-block w-16">{subtotal}</span>
               <br />
               Delivery:
-              <span className="text-black font-bold inline-block w-16">Rs/- 20</span>
+              <span className="text-black font-bold inline-block w-16">Rs/- 5</span>
               <br />
               Total:
-              <span className="text-black font-bold inline-block w-16">Rs/- {subtotal + 20}</span>
+              <span className="text-black font-bold inline-block w-16">Rs/- {subtotal + 5}</span>
               <br />
             </div>
           </div>
