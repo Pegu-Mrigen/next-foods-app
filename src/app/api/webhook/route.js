@@ -25,17 +25,21 @@ export async function POST(req) {
     console.error("stripe errror");
     return Response.json(err, { status: 400 });
   }
-  //console.log(event);
+  console.log(event);
+  console.log(checkout?.session?.completed)
 
-  if (event.type === "checkout.session.completed") {
+  if (event?.type === "checkout?.session?.completed") {
     console.log(event);
     console.log({ orderId: event?.data?.object?.metadata?.orderId });
     const orderId = event?.data?.object?.metadata?.orderId;
     const isPaid = event?.data?.object?.payment_status === "paid";
 
-    if (isPaid) {
-      await Order.updateOne({ _id: orderId }, { paid: true });
-    }
+    // if(isPaid) {
+    //   await Order.updateOne({ _id:orderId}, {paid:true});
+    // }
+    
+      await Order.updateOne({ _id:orderId}, {paid:true});
+    
   }
 
   return Response.json("ok", { status: 200 });

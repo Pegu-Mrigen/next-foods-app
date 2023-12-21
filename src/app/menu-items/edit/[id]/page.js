@@ -43,7 +43,8 @@ const router = useRouter()
 
   useEffect(() => {
     //console.log(params)
-    fetch("/api/menu-items").then(res=>{res.json().then(items=>{
+    fetch("/api/menu-items").then(res=>{
+      res.json().then(items=>{
         const item= items.find(i=>i._id===id)
         //console.log(item)
         setImage(item?.image);
