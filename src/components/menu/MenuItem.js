@@ -166,7 +166,7 @@ const MenuItem = (menuItem) => {
                     onClick={handleAddToCartButtonClick}
                     className="text-white  "
                   >
-                    Add to cart Rs/- {basePrice}
+                    Add to cart Rs/- {selectedPrice}
                   </div>
                 </FlyingButton>
               </div>
