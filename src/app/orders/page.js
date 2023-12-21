@@ -39,6 +39,9 @@ const OrdersPage = () => {
         {loadingOrders && (
             <div>Loading orders...</div>
         )}
+
+
+
         {orders?.length > 0 ?(
           orders.map((order) => (
             <div
@@ -75,7 +78,12 @@ const OrdersPage = () => {
                 </Link>
               </div>
             </div>
-          ))):""
+          ))):<section className="mt-8 text-center">
+          
+          <p className="mt-4 min-h-screen ">
+            Your order list is empty 😞  
+          </p>
+        </section>
 
 
         }
