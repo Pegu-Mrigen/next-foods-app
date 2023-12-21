@@ -34,11 +34,11 @@ export async function POST(req) {
     const orderId = event?.data?.object?.metadata?.orderId;
     const isPaid = event?.data?.object?.payment_status === "paid";
 
-    // if(isPaid) {
-    //   await Order.updateOne({ _id:orderId}, {paid:true});
-    // }
-    
+    if(isPaid) {
       await Order.updateOne({ _id:orderId}, {paid:true});
+    }
+    
+      // await Order.updateOne({ _id:orderId}, {paid:true});
     
   }
 
