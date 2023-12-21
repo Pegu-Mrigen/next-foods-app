@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import MenuItemsPage from './../menu-items/page';
 import SectionHeaders from '@/components/layout/SectionHeaders';
 import MenuItem from '@/components/menu/MenuItem';
+import Link from "next/link";
 
 const MenuPage = () => {
 
@@ -45,6 +46,16 @@ const MenuPage = () => {
                 </div>
             </div>
         ))}
+
+        
+
+
+<Link
+            href={"/"}
+            className="bg-primary   p-1 w-fit rounded-md text-white mt-4 flex   mx-auto"
+          >
+            Top 👆
+          </Link> 
     </section>
   )
 }

@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/layout/Hero";
 import HomeMenu from "@/components/layout/HomeMenu";
 import SectionHeaders from "@/components/layout/SectionHeaders";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,10 +25,19 @@ export default function Home() {
     <section className="text-center mt-8" id="contact">
       <SectionHeaders subHeader={"Don\'t hesitate"} mainHeader="Contact Appun Computers, Gohpur"  />
       <div className="mt-8">
-      <a href="tel:+917002274701" className="text-4xl underline text-gray-500">+917002274701</a>
+      <a href="tel:+917002274701" className=" text-4xl underline text-gray-500">+917002274701</a>
       </div>
+
+      <Link
+            href={"/"}
+            className="bg-primary   p-1 w-fit rounded-md text-white mt-4 flex   mx-auto"
+          >
+            Top 👆
+          </Link> 
       
     </section>
+
+
     
     </>
    
