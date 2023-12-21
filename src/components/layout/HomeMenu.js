@@ -39,7 +39,7 @@ const HomeMenu = () => {
         </div>
       </div>
       <div className="text-center mb-4">
-        <SectionHeaders subHeader="Checkout" mainHeader="Our Best Sellers" />
+        <SectionHeaders subHeader="Checkout" mainHeader="Our Recent Food Items" />
       </div>
 
       <div className="grid sm:grid-cols-3 gap-4">
