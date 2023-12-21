@@ -11,8 +11,8 @@ const MenuItemForm = ({onSubmit, menuItem}) => {
   const [basePrice, setBasePrice] = useState(menuItem?.basePrice || "");
   const [sizes, setSizes] = useState(menuItem?.sizes || []);
   const [extraIngredientPrice, setExtraIngredientPrice] = useState(menuItem?.extraIngredientPrice || []);
-  const [category, setCategory] = useState(menuItem?.category || "");
-  const [categories, setCategories] = useState( []);
+  const [category, setCategory] = useState(menuItem?.category || "65749fa00cdb55a69eb5c783");
+  const [categories, setCategories] = useState( [] );
 
 
   const addSize=()=>{
@@ -77,8 +77,8 @@ const MenuItemForm = ({onSubmit, menuItem}) => {
         />
 
         <label>Category</label>
-        <select value={category} onChange={e=>setCategory(e.target.value)|| "OTHER FOODS"}>{categories?.length>0 && categories.map(c=>(
-          <option key={c._id} value={c._id}>{c.name}</option>
+        <select value={category} onChange={e=>setCategory(e.target.value)}>{categories?.length>0 && categories.map(c=>(
+          <option key={c._id} value={c?._id} >{c?.name}</option>
           // <option key={c._id} >{c.name}</option>
         ))}</select>
         <label>Base price</label>
