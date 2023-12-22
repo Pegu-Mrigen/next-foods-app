@@ -94,7 +94,7 @@ export default function Header() {
       </div>
       {mobileNavOpen && (
         <div
-          className="md:hidden p-4 bg-gray-200 rounded-lg mt-2 flex flex-col gap-10 text-center h-[60vh] text-xl font-bold text-primary"
+          className="md:hidden p-4 bg-gray-200 rounded-lg mt-2 flex flex-col gap-10 text-center min-h-[60vh] text-xl font-bold text-primary"
           onClick={() => setMobileNavOpen(false)}
         >
           <Link href={"/"}>Home</Link>
